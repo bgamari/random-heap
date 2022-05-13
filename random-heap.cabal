@@ -1,0 +1,23 @@
+cabal-version:      2.4
+name:               random-heap
+version:            0.1.0.0
+author:             Ben Gamari
+maintainer:         ben@smart-cactus.org
+
+library
+    exposed-modules:  RandomHeap
+    hs-source-dirs:   src
+    build-depends:    base,
+                      ghc-heap,
+                      QuickCheck,
+                      primitive
+    default-language: Haskell2010
+
+executable sample
+    main-is:          Main.hs
+    build-depends:    base,
+                      ghc-heap,
+                      QuickCheck,
+                      random-heap
+    default-language: Haskell2010
+
