@@ -5,7 +5,7 @@ author:             Ben Gamari
 maintainer:         ben@smart-cactus.org
 
 library
-    exposed-modules:  RandomHeap
+    exposed-modules:  RandomHeap, Types.Heap, Types.Shape
     hs-source-dirs:   src
     build-depends:    base,
                       ghc-heap,
@@ -19,5 +19,6 @@ executable sample
                       ghc-heap,
                       QuickCheck,
                       random-heap
+    ghc-options:      -debug -with-rtsopts=-A1G
     default-language: Haskell2010
 
