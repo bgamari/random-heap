@@ -43,7 +43,7 @@ toHeap (Thunk (SomeObj obj)) = retLifted (obj + 2)
 toHeap (SelectorApp x) = retLifted (fst x)
 toHeap FUN = retLifted id
 toHeap (AP x) = retLifted (id x)
-toHeap (PAP x) = retLifted (id x) -- TODO
+toHeap (PAP (SomeObj x)) = retLifted (fun2 x)
 toHeap (MVAR Nothing) = do
     MVar.MVar mvar <- MVar.newEmptyMVar @IO @Int
     retUnlifted mvar
